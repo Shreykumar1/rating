@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { collegeService } from '../services/collegeService';
 import { useAuth } from '../context/AuthContext';
+import './AddCollege.css';
 
 function AddCollege() {
   const { user } = useAuth(); 
@@ -80,7 +81,7 @@ function AddCollege() {
   };
 
   return (
-    <div className="rating-page">
+    <div className="rating-page dark-theme">
       <h1>Add New College</h1>
       
       <form onSubmit={handleSubmit} className="college-form">
@@ -90,6 +91,7 @@ function AddCollege() {
             <label>College Name:</label>
             <input
               type="text"
+              className="input-large"
               value={formData.collegeName}
               onChange={(e) => setFormData(prev => ({ ...prev, collegeName: e.target.value }))}
               required
@@ -104,6 +106,7 @@ function AddCollege() {
             <input
               type="text"
               name="city"
+              className="input-large"
               value={formData.location.city}
               onChange={handleLocationChange}
               required
@@ -114,6 +117,7 @@ function AddCollege() {
             <input
               type="text"
               name="state"
+              className="input-large"
               value={formData.location.state}
               onChange={handleLocationChange}
               required
@@ -124,6 +128,7 @@ function AddCollege() {
             <input
               type="text"
               name="country"
+              className="input-large"
               value={formData.location.country}
               onChange={handleLocationChange}
               required
@@ -137,15 +142,17 @@ function AddCollege() {
             <div className="form-group" key={key}>
               <label>{key.replace(/([A-Z])/g, ' $1').trim()}:</label>
               <input
-                type="number"
+                type="range"
                 name={key}
                 value={value}
                 onChange={handleRatingChange}
                 min="1"
                 max="5"
                 step="0.1"
+                className="rating-slider"
                 required
               />
+              <span>{value}</span>
             </div>
           ))}
         </div>

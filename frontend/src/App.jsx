@@ -35,11 +35,11 @@ const Navbar = () => {
   return (
     <nav className="navigation">
       <ul>
-        <li><Link to="/colleges">Colleges</Link></li>
-        <li><Link to="/rating">Rate College</Link></li>
-        <li><Link to="/login">Login</Link></li>
+        <li><Link className="nav-link" to="/colleges">Colleges</Link></li>
+        <li><Link className="nav-link" to="/rating">Rate College</Link></li>
+        <li><Link className="nav-link" to="/login">Login</Link></li>
         {user && user.user.isAdmin && (
-          <li><Link to="/admin">Admin</Link></li>
+          <li><Link className="nav-link" to="/admin">Add College</Link></li>
         )}
         {user && (
           <>

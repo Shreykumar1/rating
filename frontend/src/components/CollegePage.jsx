@@ -71,59 +71,6 @@ function CollegePage() {
           ))}
         </div>
       </div>
-
-      <style>{`
-        .college-page {
-          padding: 20px;
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-
-        .ratings-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 20px;
-          margin: 20px 0;
-        }
-
-        .rating-item, .rating-breakdown, .statistics {
-          background: #000;
-          padding: 20px;
-          border-radius: 8px;
-        }
-
-        .rating-value {
-          font-size: 24px;
-          font-weight: bold;
-          color: #2c3e50;
-        }
-
-        ul {
-          list-style: none;
-          padding: 0;
-        }
-
-        li {
-          margin: 10px 0;
-        }
-
-        .review-card {
-          background: #000;
-          padding: 15px;
-          margin: 10px 0;
-          border-radius: 8px;
-        }
-
-        h2 {
-          color: #2c3e50;
-          margin-top: 30px;
-        }
-
-        h3 {
-          color: #34495e;
-          margin-bottom: 15px;
-        }
-      `}</style>
     </div>
   )
 }

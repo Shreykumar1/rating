@@ -158,48 +158,6 @@ function RatingPage() {
         </form>
       )}
     </div>
-    <style>{`
-        .college-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-.college-card {
-  background: white;
-  border: 1px solid #ddd;
-  color: black;
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.2s;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.college-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.college-card h3 {
-  margin-bottom: 15px;
-}
-
-.college-card button {
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.college-card button:hover {
-  background-color: #0056b3;
-}
-      `}</style>
       </>
   );
 }

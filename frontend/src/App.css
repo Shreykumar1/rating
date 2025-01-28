@@ -1,10 +1,3 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -42,9 +35,10 @@
 }
 
 .navigation {
-  background-color: #f8f9fa;
+  background-color: #333;
   padding: 1rem;
   margin-bottom: 2rem;
+  width: 100%;
 }
 
 .navigation ul {
@@ -52,17 +46,21 @@
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 2rem;
+  justify-content: space-around;
 }
 
 .navigation a {
   text-decoration: none;
-  color: #333;
+  color: #ffffff;
   font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-.navigation a:hover {
-  color: #007bff;
+.nav-link:hover {
+  background-color: #007bff;
+  color: #ffffff;
 }
 
 .college-card {
@@ -73,28 +71,34 @@
 }
 
 /* Login styles */
+/* Previous styles remain the same */
+
+/* Login Page Styles */
 .login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
-  background-color: #f5f5f5;
-  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
 .login-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 400px;
+  max-width: 440px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333333;
+  animation: fadeInUp 0.5s ease-out;
 }
 
 .login-card h1 {
-  text-align: center;
-  color: #2c3e50;
+  color: #4a90e2;
+  font-size: 2rem;
   margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 0.5px;
 }
 
 .login-form {
@@ -110,58 +114,167 @@
 }
 
 .login-form label {
-  color: #4a5568;
+  color: #b0b0b0;
+  font-size: 0.95rem;
   font-weight: 500;
+  margin-left: 0.2rem;
 }
 
 .login-form input {
-  padding: 0.75rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 4px;
+  background-color: #242424;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 0.9rem 1.2rem;
+  color: #e0e0e0;
   font-size: 1rem;
-  transition: border-color 0.2s;
+  transition: all 0.3s ease;
 }
 
 .login-form input:focus {
-  border-color: #4299e1;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+  background-color: #2a2a2a;
+}
+
+.login-form input:hover {
+  background-color: #2a2a2a;
 }
 
 .login-button {
-  background-color: #4299e1;
+  background-color: #4a90e2;
   color: white;
-  padding: 0.75rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
+  padding: 1rem;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
 }
 
-.login-button:hover {
-  background-color: #3182ce;
+.login-button:hover:not(:disabled) {
+  background-color: #357abd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+}
+
+.login-button:active:not(:disabled) {
+  transform: translateY(0);
 }
 
 .login-button:disabled {
-  background-color: #a0aec0;
+  background-color: #4a4a4a;
   cursor: not-allowed;
+  opacity: 0.7;
 }
 
 .login-footer {
   margin-top: 2rem;
   text-align: center;
-  color: #4a5568;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.login-footer p {
+  color: #b0b0b0;
+  font-size: 0.95rem;
 }
 
 .login-footer a {
-  color: #4299e1;
+  color: #4a90e2;
   text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .login-footer a:hover {
+  color: #357abd;
   text-decoration: underline;
+}
+
+.error-message {
+  background-color: rgba(220, 53, 69, 0.1);
+  border: 1px solid #dc3545;
+  color: #ff6b6b;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading State */
+.login-button:disabled::after {
+  content: '';
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.5rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 1rem;
+  }
+  
+  .login-card {
+    padding: 1.5rem;
+  }
+  
+  .login-card h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .login-form input {
+    padding: 0.8rem 1rem;
+  }
+}
+
+/* Autofill Styles */
+.login-form input:-webkit-autofill,
+.login-form input:-webkit-autofill:hover,
+.login-form input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #e0e0e0;
+  -webkit-box-shadow: 0 0 0px 1000px #242424 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Focus Visible */
+.login-button:focus-visible,
+.login-footer a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+  border-radius: 4px;
 }
 
 .error-message {
@@ -177,11 +290,17 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(74, 144, 226, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(74, 144, 226, 0.05) 0%, transparent 40%);
 }
 
 .main-content {
   flex: 1;
   padding: 20px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .navigation {
@@ -194,18 +313,20 @@
   padding: 0;
   margin: 0;
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
 }
 
-.navigation li a {
+.nav-link {
   color: white;
   text-decoration: none;
   font-weight: 500;
 }
 
-.navigation li a:hover {
+/* .navigation li a:hover {
   color: #007bff;
-}
+} */
 
 /* Admin Panel Styles */
 .admin-panel {
@@ -292,6 +413,594 @@
   border-radius: 5px; /* Rounded corners */
 }
 
-.profile-button:hover {
-  background-color: #0056b3; /* Darker background on hover */
+
+
+.colleges-list {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.colleges-list h1 {
+  grid-column: 1 / -1;
+  color: #4a90e2;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  border-bottom: 3px solid #333333;
+  padding-bottom: 1rem;
+}
+
+.college-card {
+  background-color: #242424;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #333333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.college-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  border-color: #4a90e2;
+}
+
+.college-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #4a90e2, #357abd);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.college-card:hover::before {
+  opacity: 1;
+}
+
+.college-card h2 {
+  color: #e0e0e0;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.college-card p {
+  color: #b0b0b0;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.college-card p:last-child {
+  color: #4a90e2;
+  font-weight: 600;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Responsive adjustments for college list */
+@media (max-width: 1200px) {
+  .colleges-list {
+    margin: 1rem;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .colleges-list {
+    grid-template-columns: 1fr;
+  }
+
+  .colleges-list h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .college-card {
+    padding: 1.25rem;
+  }
+}
+
+/* Animation for card loading */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.college-card {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Empty state */
+.colleges-list:empty::after {
+  content: 'No colleges found';
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: #b0b0b0;
+  font-size: 1.2rem;
+  background-color: #242424;
+  border-radius: 12px;
+  border: 2px dashed #333333;
+}
+
+/* Loading state shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.college-card.loading {
+  background: linear-gradient(
+    90deg,
+    #242424 25%,
+    #2a2a2a 50%,
+    #242424 75%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+/* Hover effects for interactive elements */
+.college-card:active {
+  transform: scale(0.98);
+}
+
+/* Focus styles for accessibility */
+.college-card:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+/* Rating visualization */
+.college-card .rating {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(74, 144, 226, 0.1);
+  border-radius: 4px;
+  margin-left: auto;
+}
+
+
+
+/* Previous styles remain the same */
+
+/* College Details Page */
+.college-page {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.college-page h1 {
+  color: #4a90e2;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #333333;
+  text-align: center;
+}
+
+.college-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.college-details h2 {
+  color: #e0e0e0;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #333333;
+}
+
+.college-details p {
+  color: #b0b0b0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Ratings Grid Layout */
+.ratings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.rating-item {
+  background-color: #242424;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #333333;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.rating-item:hover {
+  transform: translateY(-5px);
+}
+
+.rating-value {
+  font-size: 2.5rem;
+  color: #4a90e2;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+/* Rating Breakdown Section */
+.rating-breakdown, .statistics {
+  background-color: #242424;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #333333;
+}
+
+.rating-breakdown h3, .statistics h3 {
+  color: #4a90e2;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.rating-breakdown ul, .statistics ul {
+  list-style: none;
+  padding: 0;
+}
+
+.rating-breakdown li, .statistics li {
+  color: #b0b0b0;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #333333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating-breakdown li:last-child, .statistics li:last-child {
+  border-bottom: none;
+}
+
+/* Reviews Section */
+.reviews-section {
+  margin-top: 2rem;
+}
+
+.review-card {
+  background-color: #242424;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #333333;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateX(5px);
+  border-left: 3px solid #4a90e2;
+}
+
+.review-card p {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.review-card small {
+  color: #808080;
+  display: block;
+  font-size: 0.9rem;
+}
+
+/* Statistics Formatting */
+.statistics li {
+  display: flex;
+  justify-content: space-between;
+  color: #b0b0b0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.college-details > * {
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: calc(var(--animation-order) * 0.1s);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .college-page {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .ratings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .college-page h1 {
+    font-size: 2rem;
+  }
+
+  .college-details h2 {
+    font-size: 1.5rem;
+  }
+
+  .rating-value {
+    font-size: 2rem;
+  }
+
+  .review-card {
+    padding: 1rem;
+  }
+}
+
+/* Loading States */
+.college-details.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.college-details.loading::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+/* Focus States */
+.review-card:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #4a90e2;
+}
+
+/* Empty States */
+.reviews-section:empty::after {
+  content: 'No reviews yet';
+  display: block;
+  text-align: center;
+  padding: 2rem;
+  color: #808080;
+  font-style: italic;
+  background-color: #242424;
+  border-radius: 10px;
+  border: 2px dashed #333333;
+}
+
+/* Previous styles remain the same */
+
+/* User Profile Page */
+.user-profile {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.user-profile h1 {
+  color: #4a90e2;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #333333;
+}
+
+.user-profile h2 {
+  color: #e0e0e0;
+  font-size: 1.4rem;
+  margin: 2rem 0 1.5rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #333333;
+}
+
+.user-profile h2:first-of-type {
+  color: #b0b0b0;
+  font-size: 1.2rem;
+  font-weight: normal;
+  border-bottom: none;
+  margin: 1rem 0;
+}
+
+.user-profile p {
+  color: #b0b0b0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.user-profile ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.user-profile li {
+  background-color: #242424;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #333333;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.user-profile li:hover {
+  transform: translateX(5px);
+  border-left: 3px solid #4a90e2;
+  background-color: #2a2a2a;
+}
+
+.user-profile li p {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.user-profile li small {
+  color: #808080;
+  display: block;
+  font-size: 0.9rem;
+}
+
+/* Empty State */
+.user-profile p:only-child {
+  text-align: center;
+  padding: 2rem;
+  background-color: #242424;
+  border-radius: 10px;
+  border: 2px dashed #333333;
+  color: #808080;
+  font-style: italic;
+}
+
+/* Loading State */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.user-profile.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.user-profile.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  animation: shimmer 2s infinite linear;
+}
+
+/* Focus States */
+.user-profile li:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #4a90e2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .user-profile {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .user-profile h1 {
+    font-size: 2rem;
+  }
+
+  .user-profile h2 {
+    font-size: 1.3rem;
+  }
+
+  .user-profile li {
+    padding: 1.25rem;
+  }
+}
+
+/* Hover Effects for Interactive Elements */
+.user-profile li:active {
+  transform: scale(0.99);
+}
+
+/* Print Styles */
+@media print {
+  .user-profile {
+    background: white;
+    color: black;
+    box-shadow: none;
+  }
+
+  .user-profile h1,
+  .user-profile h2 {
+    color: black;
+  }
+
+  .user-profile li {
+    border: 1px solid #ddd;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* Accessibility Improvements */
+.user-profile:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+/* Review Count Badge */
+.user-profile h2:nth-of-type(2)::after {
+  content: attr(data-count);
+  display: inline-block;
+  background: #4a90e2;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  vertical-align: middle;
 }
